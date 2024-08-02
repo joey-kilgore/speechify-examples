@@ -1,7 +1,7 @@
 # SPEECHIFY-EXAMPLES
 
 ## Setup
-Go to the speechify website and request and API
+Go to the speechify website and request and API https://speechify.com/blog/category/api/
 
 In `constants.py` copy and paste the API key into the quotations
 
