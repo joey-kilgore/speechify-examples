@@ -36,5 +36,7 @@ jobs:
     - name: Test
       env:
         SPEECHIFY_API: ${{ secrets.SPEECHIFY_API }}
+        HELLO_WORLD: ${{ secrets.HELLO_WORLD}}
       run: |
+        echo "$HELLO_WORLD"
         python hello-world.py --key "$SPEECHIFY_API"
