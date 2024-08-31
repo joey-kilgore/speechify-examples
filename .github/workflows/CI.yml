@@ -37,4 +37,4 @@ jobs:
       env:
         SPEECHIFY_API: ${{ secrets.SPEECHIFY_API }}
       run: |
-        python hello_world.py --key "$SPEECHIFY_API"
+        python hello-world.py --key "$SPEECHIFY_API"
