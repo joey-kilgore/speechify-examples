@@ -22,7 +22,7 @@ url = "https://api.sws.speechify.com/v1/audio/speech"
 headers = {
     "accept": "*/*",
     "content-type": "application/json",
-    "Authorization": constants.API_KEY
+    "Authorization": api_key
 }
 data = {
     "input":f"<speak>{text}</speak>",
