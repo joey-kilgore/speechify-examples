@@ -2,6 +2,17 @@ import requests
 import base64
 import constants
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--key", help="Speechify API Key (if not in constants.py file)",
+                    type=str, default=None)
+args = parser.parse_args()
+
+if(args.key == None):
+    api_key = constants.API_KEY
+else:
+    api_key = args.key
+
 text = "Hello World"
 
 # to build the POST request, we use the API key in the header
@@ -21,6 +32,7 @@ data = {
 
 # Handle the actual request here, don't forget to convert the JSON
 response = requests.post(url, headers=headers, json=data)
+print(response)
 responseJSON = response.json()
 
 print(response)
@@ -30,7 +42,7 @@ print(responseJSON)
 #  to bit string and save to file 
 try:
    file_content=base64.b64decode(responseJSON['audio_data'])
-   with open("test.mp3","wb") as f:
+   with open("Hello_world.mp3","wb") as f:
         f.write(file_content)
 except Exception as e:
    print(str(e))
